@@ -9,10 +9,11 @@ public class Clubs {
     @Id
     private String clubId;          // Club ID
     private String clubName;        // Club Name
-    private String slogan;       // Club Slogan
-    private String logo;         // Club Logo file name
-    private String description;  // Club Description
+    private String slogan;          // Club Slogan
+    private String logo;            // Club Logo file name
+    private String description;     // Club Description
 
+    // Default constructor
     public Clubs() {
     }
 
@@ -26,22 +27,19 @@ public class Clubs {
     }
 
     // Getters and Setters
-    public String getclubId() {
+    public String getClubId() {
         return clubId;
     }
 
-    public void setclubId(String clubId) {
+    public void setClubId(String clubId) {
         this.clubId = clubId;
     }
 
-    public String getclubName() {
+    public String getClubName() {
         return clubName;
     }
-    public String getclubPassword() {
-        return password;
-    }
 
-    public void setclubName(String clubName) {
+    public void setClubName(String clubName) {
         this.clubName = clubName;
     }
 
