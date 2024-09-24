@@ -1,6 +1,7 @@
 package com.collegeclubs.ecosystem_of_clubs.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Clubs")
@@ -18,27 +19,32 @@ public class Clubs {
     }
 
     // Parameterized constructor
-    public Clubs(String clubId, String clubName, String slogan, String logo, String description) {
+    public Clubs(String clubId, String clubName, String slogan, String logo, String description, ClubAdmin admin) {
         this.clubId = clubId;
         this.clubName = clubName;
         this.slogan = slogan;
         this.logo = logo;
         this.description = description;
+        this.admin = admin;
     }
 
     // Getters and Setters
+    public String getClubId() {
     public String getClubId() {
         return clubId;
     }
 
     public void setClubId(String clubId) {
+    public void setClubId(String clubId) {
         this.clubId = clubId;
     }
 
     public String getClubName() {
+    public String getClubName() {
         return clubName;
     }
 
+    public void setClubName(String clubName) {
     public void setClubName(String clubName) {
         this.clubName = clubName;
     }
@@ -65,5 +71,13 @@ public class Clubs {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ClubAdmin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(ClubAdmin admin) {
+        this.admin = admin;
     }
 }
