@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "End_User")
-public class user {
+public class Users {
     
     @Id
     private String userId;
@@ -16,36 +16,32 @@ public class user {
     private String phone;
 
     // Constructors
-    public user() {}
+    public Users() {}
 
-    public user(String userId, String username, String email, String passsword,String course, String sem, String phone) {
+    public Users(String userId, String username, String email, String password, String course, String sem, String phone) {
         this.userId = userId;
         this.username = username;
         this.email = email;
-        this.password = passsword;
+        this.password = password;
         this.course = course;
         this.sem = sem;
         this.phone = phone;
     }
 
     // Getters and Setters
-    public String getuserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setuserId(String userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -55,6 +51,14 @@ public class user {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getCourse() {
