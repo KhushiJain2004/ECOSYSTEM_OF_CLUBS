@@ -1,5 +1,7 @@
 package com.collegeclubs.ecosystem_of_clubs.model;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "ClubAdmins")
@@ -7,23 +9,26 @@ public class ClubAdmin {
 
     @Id
     private String adminId;
-    private String clubId;  // Foreign key from Club
-    private String username; 
+    private String username;
     private String email;
     private String password;
     private String phone;
 
+    @DBRef
+    private Clubs club;  // Reference to Club document
+
+    // Default constructor
     public ClubAdmin() {
     }
 
     // Parameterized constructor
-    public ClubAdmin(String adminId, String clubId, String username, String email, String password, String phone) {
+    public ClubAdmin(String adminId, String username, String email, String password, String phone, Clubs club) {
         this.adminId = adminId;
-        this.clubId = clubId;
         this.username = username;
         this.email = email;
         this.password = password;
         this.phone = phone;
+        this.club = club;  // Set reference to Club object
     }
 
     // Getters and Setters
@@ -35,19 +40,11 @@ public class ClubAdmin {
         this.adminId = adminId;
     }
 
-    public String getClubId() {
-        return clubId;
-    }
-
-    public void setClubId(String clubId) {
-        this.clubId = clubId;
-    }
-
-    public String getusername() {
+    public String getUsername() {
         return username;
     }
 
-    public void setusername(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
@@ -73,5 +70,13 @@ public class ClubAdmin {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Clubs getClub() {
+        return club;
+    }
+
+    public void setClub(Clubs club) {
+        this.club = club;
     }
 }

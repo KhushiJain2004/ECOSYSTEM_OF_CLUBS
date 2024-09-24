@@ -37,6 +37,9 @@ public class Clubs {
     public String getclubName() {
         return clubName;
     }
+    public String getclubPassword() {
+        return password;
+    }
 
     public void setclubName(String clubName) {
         this.clubName = clubName;

@@ -11,7 +11,7 @@ public class EcosystemOfClubsApplication {
 
 	 @GetMapping("/")
     public String check() {
-        return "Ecosystem of clubs ";
+        return "Ecosystem of Clubs ";
     }
 	public static void main(String[] args) {
 		SpringApplication.run(EcosystemOfClubsApplication.class, args);
